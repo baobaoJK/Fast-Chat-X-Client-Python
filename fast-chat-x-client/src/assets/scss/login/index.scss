@@ -1,0 +1,324 @@
+@import '../variable.scss';
+
+#login {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $background;
+}
+
+// 表单盒子样式
+.form-box {
+  display: flex;
+  position: relative;
+  width: 43.75rem;
+  height: 25rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0.125rem 0.125rem 0.125rem rgba($color: $mainColor, $alpha: 0.1);
+
+  // 背景
+  .background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: $mainColor;
+
+    // 文本
+    .register-text,
+    .login-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 50%;
+      height: 100%;
+
+      .title {
+        margin: 0;
+        font-weight: 100;
+      }
+
+      .sub-title {
+        margin: 0;
+        margin-bottom: 2rem;
+        letter-spacing: 0.5rem;
+      }
+
+      img {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+      }
+
+      .text {
+        margin: 0;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: rgba($color: $mainColor, $alpha: 0.8);
+      }
+
+      // 按钮
+      button {
+        width: 6.25rem;
+        height: 2rem;
+        background-color: $mainColor;
+        border: 0.0625rem solid white;
+        border-radius: 0.25rem;
+        color: white;
+        transition: opacity $transitionTime;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  //表单块
+  .form-block {
+    display: flex;
+    position: absolute;
+    top: -3.125rem;
+    left: 2rem;
+    width: calc(50% - 2rem);
+    height: calc(100% + 6.25rem);
+    background-color: $mainColor;
+    border-radius: 0.5rem;
+    transition: all $transitionTime;
+  }
+
+  // 切换样式
+  .change-register-form {
+    transform: translateX(100%);
+
+    .login-box {
+      opacity: 0;
+      z-index: 0;
+    }
+
+    .register-box {
+      opacity: 1;
+      z-index: 100;
+    }
+  }
+
+  // 按钮样式
+  .change-login,
+  .change-register {
+    font-size: 1rem;
+  }
+}
+
+// 登录盒子样式
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  transition: all $transitionTime;
+  z-index: 100;
+
+  // 登录标题样式
+  .login-title {
+    font-weight: 100;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  // 登录表单样式
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    :nth-child(n) {
+      margin-bottom: 1.5rem;
+    }
+
+    // 输入框样式
+    input {
+      width: 60%;
+      height: 2rem;
+      padding: 0 1.25rem;
+      font-size: 1.125rem;
+      color: white;
+      text-align: center;
+      background-color: transparent;
+      border: none;
+      border-bottom: 0.0625rem solid rgba($color: white, $alpha: 0.8);
+      transition: border $transitionTime;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    // 登录按钮样式
+    .login-button {
+      padding: 0;
+      width: calc(60% + 2.5rem);
+      font-size: 1.125rem;
+      height: 2.5rem;
+      color: $mainColor;
+      background-color: white;
+      border: 0.0625rem solid $mainColor;
+      border-radius: 0.25rem;
+      transition: opacity $transitionTime;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    // 链接样式
+    a {
+      margin-left: 0.75rem;
+      color: white;
+      transition: color $transitionTime;
+
+      &:hover {
+        color: #cccccc;
+      }
+    }
+  }
+}
+
+// 注册盒子样式
+.register-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  opacity: 0;
+  transition: all $transitionTime;
+  z-index: 0;
+
+  // 注册标题样式
+  .register-title {
+    font-weight: 100;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  // 注册表单样式
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    :nth-child(n) {
+      margin-bottom: 1.5rem;
+    }
+
+    // 输入框样式
+    input {
+      width: 60%;
+      height: 2.25rem;
+      padding: 0rem 1.25rem;
+      font-size: 1.125rem;
+      color: white;
+      text-align: center;
+      background-color: transparent;
+      border: none;
+      border-bottom: 0.0625rem solid rgba($color: white, $alpha: 0.8);
+      transition: border $transitionTime;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    // 获取验证码块样式
+    .register-code-pane {
+      display: flex;
+      position: relative;
+      width: calc(100% - 5.125rem);
+
+      // 验证码输入框样式
+      .register-code {
+        width: 100%;
+        padding-right: 6.25rem;
+        padding-left: 0.625rem;
+      }
+
+      // 验证码按钮样式
+      .register-code-button {
+        display: block;
+        position: absolute;
+        top: -0.1875rem;
+        right: 0rem;
+        width: 6.25rem;
+        height: 2.5rem;
+        padding: 0;
+        font-size: 1rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: color $transitionTime;
+
+        &:hover {
+          color: #cccccc;
+        }
+
+        &:disabled {
+          color: rgb(200, 200, 200);
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    // 注册按钮样式
+    .register-button {
+      padding: 0;
+      width: calc(60% + 2.5rem);
+      height: 2.5rem;
+      color: $mainColor;
+      background-color: white;
+      border: 0.0625rem solid $mainColor;
+      border-radius: 0.25rem;
+      transition: opacity $transitionTime;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    // 链接样式
+    a {
+      color: white;
+      transition: color $transitionTime;
+
+      &:hover {
+        color: #cccccc;
+      }
+    }
+  }
+}

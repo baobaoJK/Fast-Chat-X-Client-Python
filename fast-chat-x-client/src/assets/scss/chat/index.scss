@@ -1,0 +1,378 @@
+@import '../variable.scss';
+
+#chat {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $background;
+}
+
+.chat-box {
+  display: flex;
+  width: 100rem;
+  height: 56.25rem;
+  border-radius: 1rem;
+  background-color: white;
+  overflow: hidden;
+
+  // 用户信息列表
+  .user-info-box {
+    width: 18.75rem;
+    height: 100%;
+    background-color: pink;
+
+    // 用户信息盒子
+    .user-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      height: 4.375rem;
+      background-color: white;
+      border-bottom: 0.0625rem solid #e0e0e0;
+      .user-img {
+        width: 3.125rem;
+        height: 3.125rem;
+        background-color: transparent;
+        margin-left: 1rem;
+        cursor: pointer;
+      }
+
+      .user-name {
+        font-size: 1.5rem;
+        margin-left: 1.75rem;
+      }
+    }
+
+    // 用户操作面板盒子
+    .user-options-box {
+      display: flex;
+      width: 100%;
+      height: calc(100% - 4.375rem);
+
+      .user-option-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        width: 4.375rem;
+        height: 100%;
+        padding-top: 1.5rem;
+        background-color: white;
+        box-sizing: border-box;
+
+        .option-icon {
+          margin-bottom: 1.5rem;
+          color: #c6c6c6;
+          font-size: 2rem;
+          font-weight: 100;
+          transition: all 0.3s;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.5;
+          }
+
+          &.active {
+            color: #fb5a7a;
+          }
+
+          &.setting {
+            position: absolute;
+            bottom: 0rem;
+          }
+        }
+      }
+
+      .user-message-box {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 4.375rem);
+        height: 100%;
+        background-color: #fafafa;
+        border-right: 0.0625rem solid #e0e0e0;
+
+        .message-box {
+          display: flex;
+          padding: 0.5rem;
+          box-sizing: border-box;
+          transition: all 0.3s;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #e8e8e8;
+          }
+
+          &.active {
+            background-color: #e8e8e8;
+          }
+
+          .user-img {
+            width: 3.125rem;
+            height: 3.125rem;
+            background-color: transparent;
+          }
+
+          .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 0.5rem;
+            width: calc(100% - 3.625rem);
+
+            .title {
+              display: flex;
+              justify-content: space-between;
+              font-size: 1rem;
+
+              .time {
+                font-size: 0.875rem;
+                color: #c6c6c6;
+              }
+            }
+            .message {
+              font-size: 0.875rem;
+              color: #4f4f4f;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 消息列表盒子
+  .message-list-box {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 34.375rem);
+    height: 100%;
+    background-color: #f5f6f7;
+
+    .message-title {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      padding-left: 1.5rem;
+      width: calc(100% - 1.5rem);
+      height: 4.375rem;
+      background-color: white;
+      border-bottom: 0.0625rem solid #e0e0e0;
+
+      .title {
+        font-size: 1.25rem;
+      }
+    }
+
+    .message-list {
+      // display: flex;
+      position: relative;
+      width: 100%;
+      height: calc(100% - 18.875rem);
+      padding: 0 0 0 1rem;
+      box-sizing: border-box;
+
+      .loading-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+      }
+
+      .message-item {
+        display: flex;
+        width: 100%;
+        min-height: 3rem;
+        margin-top: 1.5rem;
+
+        &:nth-last-child(n) {
+          margin-bottom: 1.5rem;
+        }
+
+        .user-img {
+          width: 3.125rem;
+          height: 3.125rem;
+          background-color: transparent;
+          margin-right: 1rem;
+        }
+
+        .message-content {
+          display: block;
+          flex-direction: column;
+          width: 90%;
+
+          .title {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+
+            .time {
+              margin-left: 2rem;
+            }
+          }
+
+          .text {
+            .content {
+              float: left;
+              position: relative;
+              font-size: 1.25rem;
+              padding: 0.75rem;
+              background-color: white;
+              border-radius: 0.5rem;
+              border-top-left-radius: 0;
+
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0rem;
+                left: -0.45rem;
+                width: 0;
+                height: 0;
+                border-top: 0.25rem solid white;
+                border-right: 0.25rem solid white;
+                border-bottom: 0.25rem solid transparent;
+                border-left: 0.25rem solid transparent;
+              }
+            }
+
+            .other {
+              color: white;
+              background-color: #1e6eff;
+
+              &::after {
+                border-top: 0.25rem solid #1e6eff;
+                border-right: 0.25rem solid #1e6eff;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .message-input-box {
+      position: relative;
+      width: 100%;
+      height: 14.5rem;
+      background-color: #f5f6f7;
+      box-sizing: border-box;
+      border-top: 0.0625rem solid #e0e0e0;
+
+      .message-option {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 2.5rem;
+
+        .option-icon {
+          font-size: 1.25rem;
+          color: #313131;
+          margin-left: 1rem;
+          transition: all 0.3s;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+
+      .textarea {
+        width: 100%;
+        height: 9rem;
+        font-size: 1.25rem;
+      }
+
+      .send-button {
+        position: absolute;
+        width: 7rem;
+        font-size: 1.25rem;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 200;
+      }
+    }
+  }
+
+  // 账号列表
+  .account-list-box {
+    width: 15.625rem;
+    height: 100%;
+    background-color: white;
+
+    .chat-options {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      height: 4.375rem;
+      background-color: white;
+      border-bottom: 0.0625rem solid #e0e0e0;
+      box-sizing: border-box;
+
+      span {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        margin-right: 1.25rem;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      .hidden {
+        background-color: #28ca40;
+      }
+
+      .max {
+        background-color: #ffbd2e;
+      }
+
+      .close {
+        background-color: #ff6057;
+      }
+    }
+
+    .account-title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      height: 2rem;
+      margin-left: 0.5rem;
+    }
+
+    .account-list {
+      width: 100%;
+      height: calc(100% - 7.375rem);
+
+      .account-item {
+        display: flex;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        box-sizing: border-box;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #f5f6f7;
+        }
+
+        .user-img {
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-right: 0.5rem;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

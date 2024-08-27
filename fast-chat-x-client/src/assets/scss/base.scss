@@ -1,0 +1,59 @@
+// 480p 屏幕
+@media screen and (min-width: 0) and (max-width: 1366px) {
+  html {
+    font-size: 12px;
+  }
+}
+// 720p 屏幕
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
+  html {
+    font-size: 14px;
+  }
+}
+// 1080p 屏幕
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+  html {
+    font-size: 16px;
+  }
+}
+// // 2k 屏幕
+// @media screen and (min-width: 1921px) and (max-width: 2560px) {
+//   html {
+//     font-size: 24px;
+//   }
+// }
+// 4k 屏幕
+@media screen and (min-width: 2561px) and (max-width: 3840px) {
+  html {
+    font-size: 32px;
+  }
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  outline: none;
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,26 @@
+.el-button {
+  span {
+    margin: 0 !important;
+  }
+}
+
+.message-input-box {
+  .el-textarea__inner {
+    height: 100%;
+    background-color: transparent;
+
+    --el-input-border: none;
+    --el-input-hover-border: none;
+    --el-input-hover-border-color: none;
+    --el-input-clear-hover-color: none;
+    --el-input-focus-border: none;
+    --el-input-focus-border-color: none;
+    --el-input-border-color: none;
+  }
+}
+
+.el-popper {
+  span {
+    font-size: 1rem;
+  }
+}
