@@ -75,7 +75,7 @@ Vue3 + Scss + TypeScript + Element-Plus + Axios + SocketIO
 
 ### 目前完成的功能
 
-![极聊X 功能](images/%E6%9E%81%E8%81%8AX%20%E5%8A%9F%E8%83%BD-17247622202452.png)
+![极聊X 功能](images/%E6%9E%81%E8%81%8AX%20%E5%8A%9F%E8%83%BD.png)
 
 ## 项目流程图
 
